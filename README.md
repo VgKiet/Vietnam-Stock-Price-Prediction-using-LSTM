@@ -99,9 +99,8 @@ streamlit run app.py
 
 ## Minh họa
 
-``` md
 ![demo](https://raw.githubusercontent.com/VgKiet/Vietnam-Stock-Price-Prediction-using-LSTM/master/image.png)
-```
+
 
 
 ------------------------------------------------------------------------
