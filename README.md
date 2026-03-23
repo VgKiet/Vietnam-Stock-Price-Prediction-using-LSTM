@@ -37,7 +37,7 @@ giá ngắn hạn (5 ngày) và trực quan hóa kết quả bằng **Streamlit*
 
 ## Công nghệ sử dụng
 
--   Python 3.x
+-   Python 
 -   TVDatafeed
 -   Pandas
 -   NumPy
