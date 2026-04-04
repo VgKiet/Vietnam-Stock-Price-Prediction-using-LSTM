@@ -1,7 +1,7 @@
 # Vietnam Stock Price Prediction using LSTM
 
 ## Tổng quan dự án
-Dự án **Vietnam Stock Price Prediction using LSTM** nhằm phát triển một mô hình dự báo giá cổ phiếu trên thị trường Việt Nam, tập trung vào các cổ phiếu niêm yết trên sàn **HOSE**. Mục tiêu là giúp nhà đầu tư có thể phân tích xu hướng ngắn hạn, dự đoán giá tương lai trong 5 ngày tiếp theo, và hỗ trợ đưa ra quyết định giao dịch một cách tham khảo.
+Dự án **Vietnam Stock Price Prediction using LSTM** nhằm phát triển một mô hình dự báo giá cổ phiếu trên thị trường Việt Nam, tập trung vào các cổ phiếu niêm yết trên sàn **HOSE, HNX, UPCOM**. Mục tiêu là giúp nhà đầu tư có thể phân tích xu hướng ngắn hạn, dự đoán giá tương lai trong 5 ngày tiếp theo, và hỗ trợ đưa ra quyết định giao dịch một cách tham khảo.
 
 Dự án sử dụng dữ liệu lịch sử giá cổ phiếu, bao gồm:
 - Giá mở cửa
