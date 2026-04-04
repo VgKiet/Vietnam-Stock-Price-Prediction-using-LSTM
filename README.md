@@ -10,7 +10,7 @@ Dự án sử dụng dữ liệu lịch sử giá cổ phiếu, bao gồm:
 - Giá đóng cửa
 - Khối lượng giao dịch
 
-Dữ liệu được thu thập tự động từ **TradingView** thông qua thư viện **TVDatafeed**, đảm bảo tính đầy đủ và cập nhật theo thời gian thực.
+Dữ liệu được thu thập tự động thông qua thư viện **TVDatafeed**, đảm bảo tính đầy đủ và cập nhật theo thời gian thực.
 
 Sử dụng mô hình **LSTM (Long Short-Term Memory)** để dự đoán xu hướng
 giá ngắn hạn (5 ngày) và trực quan hóa kết quả bằng **Streamlit**.
