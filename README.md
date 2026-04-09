@@ -1,7 +1,7 @@
 # Vietnam Stock Price Prediction using LSTM
 
 ## Tổng quan dự án
-Dự án **Vietnam Stock Price Prediction using LSTM** nhằm phát triển một mô hình dự báo giá cổ phiếu trên thị trường Việt Nam, tập trung vào các cổ phiếu niêm yết trên sàn **HOSE**. Mục tiêu là giúp nhà đầu tư có thể phân tích xu hướng ngắn hạn, dự đoán giá tương lai trong 5 ngày tiếp theo, và hỗ trợ đưa ra quyết định giao dịch một cách tham khảo.
+Dự án **Vietnam Stock Price Prediction using LSTM** nhằm phát triển một mô hình dự báo giá cổ phiếu trên thị trường Việt Nam, tập trung vào các cổ phiếu niêm yết trên sàn **HOSE, HNX, UPCOM**. Mục tiêu là giúp nhà đầu tư có thể phân tích xu hướng ngắn hạn, dự đoán giá tương lai trong 5 ngày tiếp theo, và hỗ trợ đưa ra quyết định giao dịch một cách tham khảo.
 
 Dự án sử dụng dữ liệu lịch sử giá cổ phiếu, bao gồm:
 - Giá mở cửa
@@ -10,7 +10,7 @@ Dự án sử dụng dữ liệu lịch sử giá cổ phiếu, bao gồm:
 - Giá đóng cửa
 - Khối lượng giao dịch
 
-Dữ liệu được thu thập tự động từ **TradingView** thông qua thư viện **TVDatafeed**, đảm bảo tính đầy đủ và cập nhật theo thời gian thực.
+Dữ liệu được thu thập tự động thông qua thư viện **TVDatafeed**, đảm bảo tính đầy đủ và cập nhật theo thời gian thực.
 
 Sử dụng mô hình **LSTM (Long Short-Term Memory)** để dự đoán xu hướng
 giá ngắn hạn (5 ngày) và trực quan hóa kết quả bằng **Streamlit**.
@@ -37,7 +37,7 @@ giá ngắn hạn (5 ngày) và trực quan hóa kết quả bằng **Streamlit*
 
 ## Công nghệ sử dụng
 
--   Python 3.x
+-   Python 
 -   TVDatafeed
 -   Pandas
 -   NumPy
@@ -99,9 +99,8 @@ streamlit run app.py
 
 ## Minh họa
 
-``` md
 ![demo](https://raw.githubusercontent.com/VgKiet/Vietnam-Stock-Price-Prediction-using-LSTM/master/image.png)
-```
+
 
 
 ------------------------------------------------------------------------
