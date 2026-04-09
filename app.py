@@ -11,33 +11,52 @@ import time
 # TV Datafeed + Streamlit
 # =========================
 tv = TvDatafeed()
+
 st.title('Stock Price Prediction')
 
 user = st.text_input(
-    'Nhập mã cổ phiếu (ví dụ: HPG, VNM, VIC...)',
+    'Nhập mã cổ phiếu (ví dụ: HPG, SHS, BSR...)',
     'HPG'
 )
+
 ticker = user.upper().strip()
+
 
 # Loading message
 loading_msg = st.empty()
-loading_msg.text("Đang lấy dữ liệu từ HOSE, vui lòng chờ vài giây...")
+loading_msg.text("Đang lấy dữ liệu thị trường, vui lòng chờ vài giây...")
 
-# Lấy dữ liệu từ HOSE
-time.sleep(2)
-df = tv.get_hist(
-    symbol=ticker,
-    exchange='HOSE',
-    interval=Interval.in_daily,
-    n_bars=5000
-)
+
+# thử lần lượt các sàn
+exchanges = ["HOSE", "HNX", "UPCOM"]
+
+df = None
+selected_exchange = None
+
+
+for exchange in exchanges:
+    try:
+        df = tv.get_hist(
+            symbol=ticker,
+            exchange=exchange,
+            interval=Interval.in_daily,
+            n_bars=5000
+        )
+        if df is not None and not df.empty:
+            selected_exchange = exchange
+            break
+    except:
+        continue
+
+
 loading_msg.empty()
 
-# Check mã không thuộc HOSE
+
+# nếu không tìm thấy mã
 if df is None or df.empty:
     st.warning(
-        f"Mã cổ phiếu **{ticker}** hiện chưa được hỗ trợ.\n"
-        "Vui lòng thử lại với mã thuộc **HOSE** như: HPG, VNM, VIC, FPT..."
+        f"Mã cổ phiếu **{ticker}** không tồn tại trên HOSE, HNX hoặc UPCOM.\n"
+        "Ví dụ hợp lệ: HPG, FPT, SHS, PVS, BSR, ACV..."
     )
     st.stop()
 
@@ -46,7 +65,7 @@ df.reset_index(inplace=True)
 df.rename(columns={'datetime': 'time'}, inplace=True)
 for col in ['open', 'high', 'low', 'close']:
     df[col] = df[col] / 1000
-
+    
 # Chia dữ liệu train/test
 split = int(len(df) * 0.7)
 data_training = df[['close']].iloc[:split].copy()
