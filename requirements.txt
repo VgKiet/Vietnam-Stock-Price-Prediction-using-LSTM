@@ -4,5 +4,5 @@ numpy
 matplotlib
 joblib
 scikit-learn
-git+https://github.com/rongardF/tvdatafeed.git
 tensorflow
+git+https://github.com/rongardF/tvdatafeed.git
