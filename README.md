@@ -1,112 +1,116 @@
-# Vietnam Stock Price Prediction using LSTM
+# 📈 Vietnam Stock Price Prediction using LSTM
 
-## Tổng quan dự án
-Dự án **Vietnam Stock Price Prediction using LSTM** nhằm phát triển một mô hình dự báo giá cổ phiếu trên thị trường Việt Nam, tập trung vào các cổ phiếu niêm yết trên sàn **HOSE, HNX, UPCOM**. Mục tiêu là giúp nhà đầu tư có thể phân tích xu hướng ngắn hạn, dự đoán giá tương lai trong 5 ngày tiếp theo, và hỗ trợ đưa ra quyết định giao dịch một cách tham khảo.
+Mô hình dự báo giá cổ phiếu trên thị trường chứng khoán Việt Nam (**HOSE, HNX, UPCOM**) sử dụng mạng nơ-ron hồi quy **LSTM (Long Short-Term Memory)**, hỗ trợ nhà đầu tư phân tích xu hướng ngắn hạn và tham khảo trước khi ra quyết định giao dịch.
 
-Dự án sử dụng dữ liệu lịch sử giá cổ phiếu, bao gồm:
-- Giá mở cửa
-- Giá cao nhất
-- Giá thấp nhất
-- Giá đóng cửa
-- Khối lượng giao dịch
+<p align="center">
+  <img src="https://raw.githubusercontent.com/VgKiet/Vietnam-Stock-Price-Prediction-using-LSTM/master/image.png" alt="Demo giao diện Streamlit" width="850">
+</p>
 
-Dữ liệu được thu thập tự động thông qua thư viện **TVDatafeed**, đảm bảo tính đầy đủ và cập nhật theo thời gian thực.
+<p align="center">
+  <img alt="Python" src="https://img.shields.io/badge/Python-3.9%2B-3776AB?logo=python&logoColor=white">
+  <img alt="TensorFlow" src="https://img.shields.io/badge/TensorFlow-Keras-FF6F00?logo=tensorflow&logoColor=white">
+  <img alt="Streamlit" src="https://img.shields.io/badge/Streamlit-App-FF4B4B?logo=streamlit&logoColor=white">
+</p>
 
-Sử dụng mô hình **LSTM (Long Short-Term Memory)** để dự đoán xu hướng
-giá ngắn hạn (5 ngày) và trực quan hóa kết quả bằng **Streamlit**.
+<p align="center">
+  🔗 <strong><a href="https://vietnam-stock-price-prediction-using-lstm.streamlit.app/">Xem demo trực tiếp</a></strong>
+</p>
 
-------------------------------------------------------------------------
+---
 
-## Tính năng
+## 🧭 Tổng quan
 
--   Thu thập dữ liệu lịch sử cổ phiếu từ TradingView bằng **TVDatafeed**
--   Xử lý và chuẩn hóa dữ liệu bằng **Pandas, NumPy, Scikit-learn**
--   Xây dựng và huấn luyện mô hình **LSTM** bằng **Keras/TensorFlow**
--   Vẽ biểu đồ giá cổ phiếu thực tế và dự đoán kèm các đường:
-    -   MA20
-    -   MA50
-    -   MA100
-    -   MA200
--   Dự đoán giá ngắn hạn 5 ngày và phân tích xu hướng:
-    -   tăng 📈
-    -   giảm 📉
-    -   sideway ↔️
--   Giao diện trực quan với **Streamlit** giúp dễ dàng sử dụng
+Dự án thu thập dữ liệu giá lịch sử (giá mở cửa, cao nhất, thấp nhất, đóng cửa, khối lượng giao dịch) từ TradingView thông qua **TVDatafeed**, sau đó huấn luyện mô hình **LSTM** để:
 
-------------------------------------------------------------------------
+- Dự đoán giá đóng cửa trong **5 phiên giao dịch tiếp theo**
+- Nhận định xu hướng ngắn hạn: **tăng 📈 / giảm 📉 / sideway ↔️**
+- Trực quan hóa kết quả qua giao diện web xây dựng bằng **Streamlit**
 
-## Công nghệ sử dụng
+> ⚠️ Kết quả dự đoán chỉ mang tính chất tham khảo, **không phải khuyến nghị đầu tư**. Nhà đầu tư cần tự đánh giá và chịu trách nhiệm với quyết định giao dịch của mình.
 
--   Python 
--   TVDatafeed
--   Pandas
--   NumPy
--   Scikit-learn
--   Keras + TensorFlow
--   Matplotlib
--   Streamlit
+---
 
-------------------------------------------------------------------------
+## ✨ Tính năng chính
 
-## Cài đặt
+| Nhóm | Mô tả |
+|---|---|
+| 📥 Thu thập dữ liệu | Lấy dữ liệu lịch sử cổ phiếu theo thời gian thực từ TradingView qua TVDatafeed |
+| 🧹 Xử lý dữ liệu | Làm sạch, chuẩn hóa dữ liệu với Pandas, NumPy, Scikit-learn |
+| 🤖 Huấn luyện mô hình | Xây dựng và huấn luyện mạng LSTM bằng Keras/TensorFlow |
+| 📊 Trực quan hóa | Biểu đồ giá thực tế vs. dự đoán kèm các đường trung bình động MA20, MA50, MA100, MA200 |
+| 🔮 Dự báo ngắn hạn | Dự đoán giá 5 phiên tới và phân loại xu hướng tăng/giảm/sideway kèm % thay đổi dự kiến |
+| 🖥️ Giao diện | Ứng dụng web tương tác, dễ sử dụng với Streamlit |
+
+---
+
+## 🛠️ Công nghệ sử dụng
+
+- **Ngôn ngữ:** Python
+- **Thu thập dữ liệu:** TVDatafeed
+- **Xử lý dữ liệu:** Pandas, NumPy, Scikit-learn
+- **Mô hình học sâu:** Keras, TensorFlow
+- **Trực quan hóa:** Matplotlib
+- **Giao diện:** Streamlit
+
+---
+
+## 🚀 Cài đặt
 
 ### 1. Clone repository
 
-``` bash
+```bash
 git clone <link-repo>
 cd <ten-thu-muc-du-an>
 ```
 
-### 2. Cài đặt các thư viện cần thiết
+### 2. Tạo môi trường ảo (khuyến nghị)
 
-``` bash
-pip install git+https://github.com/rongardF/tvdatafeed.git
-pip install numpy pandas scikit-learn matplotlib keras tensorflow streamlit
+```bash
+python -m venv venv
+source venv/bin/activate      # macOS/Linux
+venv\Scripts\activate         # Windows
 ```
 
-------------------------------------------------------------------------
+### 3. Cài đặt thư viện
 
-## Chạy ứng dụng
+Các thư viện cần thiết đã được liệt kê trong `requirements.txt`:
 
-``` bash
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## ▶️ Chạy ứng dụng
+
+```bash
 streamlit run app.py
 ```
 
-------------------------------------------------------------------------
+Sau khi chạy, ứng dụng sẽ mở tại `http://localhost:8501`.
 
-## Hướng dẫn sử dụng
+---
 
-1.  Nhập mã cổ phiếu thuộc sàn HOSE (ví dụ: HPG, VNM, VIC,...)
+## 📖 Hướng dẫn sử dụng
 
-2.  Các tính năng trong giao diện:
+1. Nhập mã cổ phiếu thuộc sàn **HOSE** (ví dụ: `HPG`, `VNM`, `VIC`, ...)
+2. Sử dụng các tính năng trên giao diện:
+   - **Dự đoán 5 ngày tiếp theo** — mô hình LSTM dự báo giá tương lai kèm biểu đồ so sánh giá thực tế và giá dự đoán
+   - **Nhận định xu hướng ngắn hạn** — xác định cổ phiếu đang tăng 📈, giảm 📉 hay đi ngang ↔️, kèm mức % thay đổi dự kiến so với giá hiện tại
 
--   Dự đoán 5 ngày tiếp theo: Mô hình LSTM dự đoán giá tương lai kèm
-    biểu đồ so sánh giá thực tế và dự đoán
--   Nhận định xu hướng ngắn hạn: Xác định cổ phiếu đang tăng 📈, giảm 📉
-    hay đi ngang ↔️ và hiển thị mức độ dự kiến thay đổi (%) so với giá
-    hiện tại
+---
 
-------------------------------------------------------------------------
+## 📊 Kết quả hiển thị
 
-## Kết quả hiển thị
+- Biểu đồ giá thực tế và giá dự đoán
+- Bảng giá dự kiến theo từng ngày trong 5 phiên tiếp theo
+- Nhận định xu hướng ngắn hạn: tăng 📈 / giảm 📉 / sideway ↔️
+- Mức độ dự kiến thay đổi giá (%)
 
--   Biểu đồ giá thực tế và dự đoán
--   Bảng giá dự kiến từng ngày trong 5 phiên tiếp theo
--   Nhận định xu hướng ngắn hạn: tăng 📈 / giảm 📉 / sideway ↔️
--   Mức độ dự kiến thay đổi giá (%)
+---
 
-------------------------------------------------------------------------
+## ⚠️ Lưu ý
 
-## Minh họa
-
-![demo](https://raw.githubusercontent.com/VgKiet/Vietnam-Stock-Price-Prediction-using-LSTM/master/image.png)
-
-
-
-------------------------------------------------------------------------
-
-## Lưu ý
-
--   Dự đoán chỉ mang tính chất tham khảo, không phải khuyến nghị đầu tư
--   Nhà đầu tư cần tự đánh giá và chịu trách nhiệm với quyết định giao
-    dịch của mình
+- Dự đoán chỉ mang tính chất **tham khảo**, không phải khuyến nghị đầu tư.
+- Nhà đầu tư cần tự đánh giá và chịu trách nhiệm với quyết định giao dịch của mình.
+- Chất lượng dự đoán phụ thuộc vào dữ liệu lịch sử và có thể không phản ánh chính xác các biến động thị trường bất thường.
