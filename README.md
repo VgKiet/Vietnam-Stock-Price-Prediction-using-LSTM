@@ -34,7 +34,7 @@ Dự án thu thập dữ liệu giá lịch sử (giá mở cửa, cao nhất, t
 
 | Nhóm | Mô tả |
 |---|---|
-| 📥 Thu thập dữ liệu | Lấy dữ liệu lịch sử cổ phiếu theo thời gian thực từ TradingView qua TVDatafeed |
+| 📥 Thu thập dữ liệu | Lấy dữ liệu lịch sử cổ phiếu theo thời gian thực qua TVDatafeed |
 | 🧹 Xử lý dữ liệu | Làm sạch, chuẩn hóa dữ liệu với Pandas, NumPy, Scikit-learn |
 | 🤖 Huấn luyện mô hình | Xây dựng và huấn luyện mạng LSTM bằng Keras/TensorFlow |
 | 📊 Trực quan hóa | Biểu đồ giá thực tế vs. dự đoán kèm các đường trung bình động MA20, MA50, MA100, MA200 |
