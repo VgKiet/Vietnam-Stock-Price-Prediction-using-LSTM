@@ -3,7 +3,7 @@
 Mô hình dự báo giá cổ phiếu trên thị trường chứng khoán Việt Nam (**HOSE, HNX, UPCOM**) sử dụng mạng nơ-ron hồi quy **LSTM (Long Short-Term Memory)**, hỗ trợ nhà đầu tư phân tích xu hướng ngắn hạn và tham khảo trước khi ra quyết định giao dịch.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/VgKiet/Vietnam-Stock-Price-Prediction-using-LSTM/master/image.png" alt="Demo giao diện Streamlit" width="850">
+  <img src="https://github.com/user-attachments/assets/a4ed9638-c5a5-4b44-8c04-43f24521cd59" alt="Demo giao diện Streamlit" width="850">
 </p>
 
 <p align="center">
